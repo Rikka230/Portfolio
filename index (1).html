@@ -1,0 +1,771 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LUXE | Creative Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        gold: '#D4AF37',
+                        'gold-light': '#FFD700',
+                    },
+                    fontFamily: {
+                        'playfair': ['Playfair Display', 'serif'],
+                        'inter': ['Inter', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style>
+        .portfolio-item:hover .portfolio-overlay {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .testimonial-slide {
+            transition: all 0.5s ease;
+        }
+        .mobile-menu {
+            transition: all 0.3s ease;
+        }
+    </style>
+</head>
+<body class="font-inter bg-white text-gray-900">
+    <!-- Header/Navigation -->
+    <header class="fixed w-full bg-white bg-opacity-90 shadow-sm z-50">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <!-- Logo -->
+                <a href="#" class="text-2xl font-playfair font-bold text-gold">VIARD Antony</a>
+                
+                <!-- Desktop Navigation -->
+                <nav class="hidden md:flex space-x-8">
+                    <a href="#home" class="hover:text-gold transition duration-300">Home</a>
+                    <a href="#about" class="hover:text-gold transition duration-300">About</a>
+                    <a href="#portfolio" class="hover:text-gold transition duration-300">Portfolio</a>
+                    <a href="#services" class="hover:text-gold transition duration-300">Services</a>
+                    <a href="#contact" class="hover:text-gold transition duration-300">Contact</a>
+                </nav>
+                
+                <!-- Mobile Menu Button -->
+                <button id="menu-toggle" class="md:hidden focus:outline-none">
+                    <svg class="w-6 h-6 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+            
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="mobile-menu hidden md:hidden mt-4 pb-4">
+                <a href="#home" class="block py-2 hover:text-gold">Home</a>
+                <a href="#about" class="block py-2 hover:text-gold">About</a>
+                <a href="#portfolio" class="block py-2 hover:text-gold">Portfolio</a>
+                <a href="#services" class="block py-2 hover:text-gold">Services</a>
+                <a href="#contact" class="block py-2 hover:text-gold">Contact</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="min-h-screen flex items-center justify-center bg-gray-50 pt-20">
+        <div class="container mx-auto px-6 py-20 text-center">
+            <h1 class="text-4xl md:text-6xl font-playfair font-bold mb-6">
+                <span class="text-gold">VIARD</span> Antony
+            </h1>
+            <h2 class="text-xl md:text-2xl font-light mb-8">Creative Director & Digital Artist</h2>
+            <p class="max-w-2xl mx-auto text-gray-600 mb-12">
+                Crafting visual experiences that blend artistry with purpose. Specializing in premium 2D/3D design and digital solutions for discerning clients.
+            </p>
+            <a href="#portfolio" class="bg-gold hover:bg-gold-light text-white px-8 py-3 rounded-full font-medium transition duration-300 transform hover:scale-105 shadow-lg">
+                View Portfolio
+            </a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-playfair font-bold text-center mb-16">
+                <span class="border-b-2 border-gold pb-2">About Me</span>
+            </h2>
+            
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-10 md:mb-0 md:pr-10">
+                    <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5cd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=688&q=80" 
+                         alt="VIARD Antony" 
+                         class="rounded-lg shadow-xl w-full max-w-md mx-auto">
+                </div>
+                <div class="md:w-1/2">
+                    <h3 class="text-2xl font-playfair font-semibold mb-6">Bringing Visions to Life</h3>
+                    <p class="text-gray-600 mb-6">
+                        With over 8 years of experience in the creative industry, I've had the privilege of working with global brands, startups, and individual clients to create visually stunning and effective designs.
+                    </p>
+                    <p class="text-gray-600 mb-8">
+                        My approach combines technical precision with artistic intuition, ensuring each project not only meets but exceeds expectations. I believe in the power of design to communicate, inspire, and transform.
+                    </p>
+                    
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="flex items-center">
+                            <i class="fas fa-paint-brush text-gold mr-3 text-xl"></i>
+                            <span>2D Art & Illustration</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-cube text-gold mr-3 text-xl"></i>
+                            <span>3D Modeling & Rendering</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-pen-nib text-gold mr-3 text-xl"></i>
+                            <span>Graphic Design</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-laptop-code text-gold mr-3 text-xl"></i>
+                            <span>Web & UI/UX Design with AI or WIX</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-playfair font-bold text-center mb-4">
+                <span class="border-b-2 border-gold pb-2">Portfolio</span>
+            </h2>
+            <p class="text-center text-gray-600 mb-12 max-w-2xl mx-auto">
+                A curated selection of my recent work across various creative disciplines.
+            </p>
+            
+            <!-- Portfolio Filter -->
+            <div class="flex justify-center mb-12">
+                <div class="inline-flex rounded-md shadow-sm">
+                    <button onclick="filterPortfolio('all')" class="px-4 py-2 text-sm font-medium rounded-l-lg border border-gold bg-gold text-white">
+                        All
+                    </button>
+                    <button onclick="filterPortfolio('2d')" class="px-4 py-2 text-sm font-medium border-t border-b border-gold hover:bg-gray-100">
+                        2D Art
+                    </button>
+                    <button onclick="filterPortfolio('3d')" class="px-4 py-2 text-sm font-medium border-t border-b border-gold hover:bg-gray-100">
+                        3D Art
+                    </button>
+                    <button onclick="filterPortfolio('graphic')" class="px-4 py-2 text-sm font-medium border-t border-b border-gold hover:bg-gray-100">
+                        Graphic Design
+                    </button>
+                    <button onclick="filterPortfolio('web')" class="px-4 py-2 text-sm font-medium rounded-r-lg border border-gold hover:bg-gray-100">
+                        Web Design
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Portfolio Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Portfolio Item 1 -->
+                <div class="portfolio-item group relative overflow-hidden rounded-lg shadow-lg" data-category="2d">
+                    <img src="https://images.unsplash.com/photo-1579762715118-a6f1d4b934f1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=686&q=80" 
+                         alt="Abstract Painting" 
+                         class="w-full h-64 object-cover transition duration-500 group-hover:scale-105">
+                    <div class="portfolio-overlay absolute inset-0 bg-black bg-opacity-70 flex flex-col justify-center items-center opacity-0 transform translate-y-4 transition duration-300 p-6">
+                        <h3 class="text-white font-playfair text-xl font-bold mb-2">Abstract Harmony</h3>
+                        <p class="text-gray-300 text-sm mb-4">Acrylic on canvas, 2023</p>
+                        <button onclick="openModal('modal1')" class="bg-gold hover:bg-gold-light text-white px-4 py-2 rounded-full text-sm">
+                            View Details
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Portfolio Item 2 -->
+                <div class="portfolio-item group relative overflow-hidden rounded-lg shadow-lg" data-category="3d">
+                    <img src="https://images.unsplash.com/photo-1635070041078-e363dbe005cb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" 
+                         alt="3D Character Design" 
+                         class="w-full h-64 object-cover transition duration-500 group-hover:scale-105">
+                    <div class="portfolio-overlay absolute inset-0 bg-black bg-opacity-70 flex flex-col justify-center items-center opacity-0 transform translate-y-4 transition duration-300 p-6">
+                        <h3 class="text-white font-playfair text-xl font-bold mb-2">Mythical Guardian</h3>
+                        <p class="text-gray-300 text-sm mb-4">Blender 3D, 2023</p>
+                        <button onclick="openModal('modal2')" class="bg-gold hover:bg-gold-light text-white px-4 py-2 rounded-full text-sm">
+                            View Details
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Portfolio Item 3 -->
+                <div class="portfolio-item group relative overflow-hidden rounded-lg shadow-lg" data-category="graphic">
+                    <img src="https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80" 
+                         alt="Brand Identity" 
+                         class="w-full h-64 object-cover transition duration-500 group-hover:scale-105">
+                    <div class="portfolio-overlay absolute inset-0 bg-black bg-opacity-70 flex flex-col justify-center items-center opacity-0 transform translate-y-4 transition duration-300 p-6">
+                        <h3 class="text-white font-playfair text-xl font-bold mb-2">Lumina Branding</h3>
+                        <p class="text-gray-300 text-sm mb-4">Corporate Identity, 2022</p>
+                        <button onclick="openModal('modal3')" class="bg-gold hover:bg-gold-light text-white px-4 py-2 rounded-full text-sm">
+                            View Details
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Portfolio Item 4 -->
+                <div class="portfolio-item group relative overflow-hidden rounded-lg shadow-lg" data-category="web">
+                    <img src="https://images.unsplash.com/photo-1547658719-da2b51169166?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1528&q=80" 
+                         alt="E-commerce Website" 
+                         class="w-full h-64 object-cover transition duration-500 group-hover:scale-105">
+                    <div class="portfolio-overlay absolute inset-0 bg-black bg-opacity-70 flex flex-col justify-center items-center opacity-0 transform translate-y-4 transition duration-300 p-6">
+                        <h3 class="text-white font-playfair text-xl font-bold mb-2">Verde E-commerce</h3>
+                        <p class="text-gray-300 text-sm mb-4">UI/UX Design, 2023</p>
+                        <button onclick="openModal('modal4')" class="bg-gold hover:bg-gold-light text-white px-4 py-2 rounded-full text-sm">
+                            View Details
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Portfolio Item 5 -->
+                <div class="portfolio-item group relative overflow-hidden rounded-lg shadow-lg" data-category="2d">
+                    <img src="https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1453&q=80" 
+                         alt="Portrait Illustration" 
+                         class="w-full h-64 object-cover transition duration-500 group-hover:scale-105">
+                    <div class="portfolio-overlay absolute inset-0 bg-black bg-opacity-70 flex flex-col justify-center items-center opacity-0 transform translate-y-4 transition duration-300 p-6">
+                        <h3 class="text-white font-playfair text-xl font-bold mb-2">Portrait Series</h3>
+                        <p class="text-gray-300 text-sm mb-4">Digital Painting, 2023</p>
+                        <button onclick="openModal('modal5')" class="bg-gold hover:bg-gold-light text-white px-4 py-2 rounded-full text-sm">
+                            View Details
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Portfolio Item 6 -->
+                <div class="portfolio-item group relative overflow-hidden rounded-lg shadow-lg" data-category="3d">
+                    <img src="https://images.unsplash.com/photo-1639762681057-408e52192e55?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1632&q=80" 
+                         alt="Architectural Visualization" 
+                         class="w-full h-64 object-cover transition duration-500 group-hover:scale-105">
+                    <div class="portfolio-overlay absolute inset-0 bg-black bg-opacity-70 flex flex-col justify-center items-center opacity-0 transform translate-y-4 transition duration-300 p-6">
+                        <h3 class="text-white font-playfair text-xl font-bold mb-2">Modern Villa</h3>
+                        <p class="text-gray-300 text-sm mb-4">3D Architectural Render, 2023</p>
+                        <button onclick="openModal('modal6')" class="bg-gold hover:bg-gold-light text-white px-4 py-2 rounded-full text-sm">
+                            View Details
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <a href="#" class="border border-gold text-gold hover:bg-gold hover:text-white px-6 py-3 rounded-full font-medium transition duration-300">
+                    View Full Portfolio
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-playfair font-bold text-center mb-4">
+                <span class="border-b-2 border-gold pb-2">Services</span>
+            </h2>
+            <p class="text-center text-gray-600 mb-12 max-w-2xl mx-auto">
+                Comprehensive creative solutions tailored to your unique needs.
+            </p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Service 1 -->
+                <div class="bg-gray-50 p-8 rounded-lg text-center hover:shadow-lg transition duration-300">
+                    <div class="bg-gold-light bg-opacity-20 w-16 h-16 mx-auto rounded-full flex items-center justify-center mb-4">
+                        <i class="fas fa-paint-brush text-gold text-2xl"></i>
+                    </div>
+                    <h3 class="font-playfair font-bold text-xl mb-3">2D Art & Illustration</h3>
+                    <p class="text-gray-600">
+                        Custom illustrations, digital paintings, concept art, and traditional media works for personal and commercial use.
+                    </p>
+                </div>
+                
+                <!-- Service 2 -->
+                <div class="bg-gray-50 p-8 rounded-lg text-center hover:shadow-lg transition duration-300">
+                    <div class="bg-gold-light bg-opacity-20 w-16 h-16 mx-auto rounded-full flex items-center justify-center mb-4">
+                        <i class="fas fa-cube text-gold text-2xl"></i>
+                    </div>
+                    <h3 class="font-playfair font-bold text-xl mb-3">3D Modeling & Rendering</h3>
+                    <p class="text-gray-600">
+                        High-quality 3D assets, product visualizations, architectural renders, and character modeling.
+                    </p>
+                </div>
+                
+                <!-- Service 3 -->
+                <div class="bg-gray-50 p-8 rounded-lg text-center hover:shadow-lg transition duration-300">
+                    <div class="bg-gold-light bg-opacity-20 w-16 h-16 mx-auto rounded-full flex items-center justify-center mb-4">
+                        <i class="fas fa-pen-nib text-gold text-2xl"></i>
+                    </div>
+                    <h3 class="font-playfair font-bold text-xl mb-3">Graphic Design</h3>
+                    <p class="text-gray-600">
+                        Brand identity, print materials, packaging design, and marketing collateral that makes an impact.
+                    </p>
+                </div>
+                
+                <!-- Service 4 -->
+                <div class="bg-gray-50 p-8 rounded-lg text-center hover:shadow-lg transition duration-300">
+                    <div class="bg-gold-light bg-opacity-20 w-16 h-16 mx-auto rounded-full flex items-center justify-center mb-4">
+                        <i class="fas fa-laptop-code text-gold text-2xl"></i>
+                    </div>
+                    <h3 class="font-playfair font-bold text-xl mb-3">Web & UI/UX Design</h3>
+                    <p class="text-gray-600">
+                        Beautiful, functional websites and user interfaces enhanced with AI capabilities for exceptional user experience.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-playfair font-bold text-center mb-4">
+                <span class="border-b-2 border-gold pb-2">Get In Touch</span>
+            </h2>
+            <p class="text-center text-gray-600 mb-12 max-w-2xl mx-auto">
+                Interested in working together? Have a project in mind? Let's discuss how I can help bring your vision to life.
+            </p>
+            
+            <div class="flex flex-col lg:flex-row gap-12">
+                <!-- Contact Form -->
+                <div class="lg:w-1/2">
+                    <form action="mailto:viard.antony83@gmail.com?subject=Message from LUXE Portfolio" method="post" enctype="text/plain" class="space-y-6">
+                        <div>
+                            <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Your Name</label>
+                            <input type="text" id="name" name="name" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gold focus:border-gold-light" required>
+                        </div>
+                        <div>
+                            <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email Address</label>
+                            <input type="email" id="email" name="email" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gold focus:border-gold-light" required>
+                        </div>
+                        <div>
+                            <label for="subject" class="block text-sm font-medium text-gray-700 mb-1">Subject</label>
+                            <input type="text" id="subject" name="subject" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gold focus:border-gold-light" required>
+                        </div>
+                        <div>
+                            <label for="message" class="block text-sm font-medium text-gray-700 mb-1">Your Message</label>
+                            <textarea id="message" name="message" rows="5" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gold focus:border-gold-light" required></textarea>
+                        </div>
+                        <button type="submit" class="bg-gold hover:bg-gold-light text-white px-6 py-3 rounded-full font-medium transition duration-300 w-full">
+                            Envoyer le message
+                        </button>
+                    </form>
+                </div>
+                
+                <!-- Contact Info -->
+                <div class="lg:w-1/2">
+                    <div class="bg-gray-50 p-8 rounded-lg h-full">
+                        <h3 class="font-playfair font-bold text-xl mb-6">Contact Information</h3>
+                        
+                        <div class="space-y-6">
+                            <div class="flex items-start">
+                                <div class="bg-gold-light bg-opacity-20 w-10 h-10 rounded-full flex items-center justify-center mr-4 mt-1">
+                                    <i class="fas fa-envelope text-gold"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-medium">Email</h4>
+                                    <a href="mailto:viard.antony83@gmail.com" class="text-gray-600 hover:text-gold">viard.antony83@gmail.com</a>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="bg-gold-light bg-opacity-20 w-10 h-10 rounded-full flex items-center justify-center mr-4 mt-1">
+                                    <i class="fas fa-phone text-gold"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-medium">Phone</h4>
+                                    <a href="tel:+1234567890" class="text-gray-600 hover:text-gold">+1 (234) 567-890</a>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="bg-gold-light bg-opacity-20 w-10 h-10 rounded-full flex items-center justify-center mr-4 mt-1">
+                                    <i class="fas fa-map-marker-alt text-gold"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-medium">Location</h4>
+                                    <p class="text-gray-600">New York, NY</p>
+                                </div>
+                            </div>
+                            
+                        </div>
+                        
+                        <div class="mt-8">
+                            <h4 class="font-medium mb-4">Follow Me</h4>
+                            <div class="flex space-x-4">
+                                <a href="#" class="w-10 h-10 rounded-full bg-gray-200 flex items-center justify-center text-gray-700 hover:bg-gold hover:text-white transition duration-300">
+                                    <i class="fab fa-behance"></i>
+                                </a>
+                                <a href="#" class="w-10 h-10 rounded-full bg-gray-200 flex items-center justify-center text-gray-700 hover:bg-gold hover:text-white transition duration-300">
+                                    <i class="fab fa-instagram"></i>
+                                </a>
+                                <a href="#" class="w-10 h-10 rounded-full bg-gray-200 flex items-center justify-center text-gray-700 hover:bg-gold hover:text-white transition duration-300">
+                                    <i class="fab fa-linkedin-in"></i>
+                                </a>
+                                <a href="#" class="w-10 h-10 rounded-full bg-gray-200 flex items-center justify-center text-gray-700 hover:bg-gold hover:text-white transition duration-300">
+                                    <i class="fab fa-artstation"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-6 md:mb-0">
+                    <a href="#" class="text-2xl font-playfair font-bold text-gold">VIARD Antony</a>
+                    <p class="text-gray-400 mt-2">Creative Director & Digital Artist</p>
+                </div>
+                
+                <div class="flex flex-col items-center md:items-end">
+                    <div class="flex space-x-6 mb-4">
+                        <a href="#" class="text-gray-400 hover:text-gold transition duration-300">
+                            <i class="fab fa-behance"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-gold transition duration-300">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-gold transition duration-300">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-gold transition duration-300">
+                            <i class="fab fa-artstation"></i>
+                        </a>
+                    </div>
+                    <p class="text-gray-400 text-sm">&copy; 2023 VIARD Antony. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Portfolio Modals -->
+    <!-- Modal 1 -->
+    <div id="modal1" class="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50 hidden">
+        <div class="bg-white rounded-lg max-w-4xl w-full mx-4 max-h-[90vh] overflow-y-auto">
+            <div class="p-6">
+                <div class="flex justify-between items-start mb-6">
+                    <h3 class="text-2xl font-playfair font-bold">Abstract Harmony</h3>
+                    <button onclick="closeModal('modal1')" class="text-gray-500 hover:text-gray-700">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+                
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                    <div>
+                        <img src="https://images.unsplash.com/photo-1579762715118-a6f1d4b934f1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=686&q=80" 
+                             alt="Abstract Painting" 
+                             class="w-full rounded-lg">
+                    </div>
+                    
+                    <div>
+                        <div class="mb-6">
+                            <h4 class="font-bold mb-2">Project Details</h4>
+                            <ul class="space-y-2 text-gray-600">
+                                <li><span class="font-medium">Medium:</span> Acrylic on canvas</li>
+                                <li><span class="font-medium">Dimensions:</span> 36" x 48"</li>
+                                <li><span class="font-medium">Year:</span> 2023</li>
+                                <li><span class="font-medium">Client:</span> Private Collector</li>
+                            </ul>
+                        </div>
+                        
+                        <div>
+                            <h4 class="font-bold mb-2">Description</h4>
+                            <p class="text-gray-600">
+                                This abstract composition explores the harmony between geometric precision and organic fluidity. Created for a private collector's residence, the piece uses a carefully balanced color palette to create visual tension while maintaining overall cohesion. The work took approximately 80 hours to complete, with multiple layers of paint creating depth and texture.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal 2 -->
+    <div id="modal2" class="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50 hidden">
+        <div class="bg-white rounded-lg max-w-4xl w-full mx-4 max-h-[90vh] overflow-y-auto">
+            <div class="p-6">
+                <div class="flex justify-between items-start mb-6">
+                    <h3 class="text-2xl font-playfair font-bold">Mythical Guardian</h3>
+                    <button onclick="closeModal('modal2')" class="text-gray-500 hover:text-gray-700">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+                
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                    <div>
+                        <img src="https://images.unsplash.com/photo-1635070041078-e363dbe005cb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" 
+                             alt="3D Character Design" 
+                             class="w-full rounded-lg">
+                    </div>
+                    
+                    <div>
+                        <div class="mb-6">
+                            <h4 class="font-bold mb-2">Project Details</h4>
+                            <ul class="space-y-2 text-gray-600">
+                                <li><span class="font-medium">Software:</span> Blender, Substance Painter</li>
+                                <li><span class="font-medium">Polycount:</span> 85,000 tris</li>
+                                <li><span class="font-medium">Year:</span> 2023</li>
+                                <li><span class="font-medium">Client:</span> Game Development Studio</li>
+                            </ul>
+                        </div>
+                        
+                        <div>
+                            <h4 class="font-bold mb-2">Description</h4>
+                            <p class="text-gray-600">
+                                The Mythical Guardian was created as a boss character for an upcoming fantasy RPG. The design blends elements of Eastern and Western mythological creatures, with intricate armor detailing and realistic fur simulation. The model is fully rigged and optimized for real-time rendering in game engines. Textures were painted in Substance Painter with 4K resolution maps.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal 3 -->
+    <div id="modal3" class="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50 hidden">
+        <div class="bg-white rounded-lg max-w-4xl w-full mx-4 max-h-[90vh] overflow-y-auto">
+            <div class="p-6">
+                <div class="flex justify-between items-start mb-6">
+                    <h3 class="text-2xl font-playfair font-bold">Lumina Branding</h3>
+                    <button onclick="closeModal('modal3')" class="text-gray-500 hover:text-gray-700">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+                
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                    <div>
+                        <img src="https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80" 
+                             alt="Brand Identity" 
+                             class="w-full rounded-lg">
+                    </div>
+                    
+                    <div>
+                        <div class="mb-6">
+                            <h4 class="font-bold mb-2">Project Details</h4>
+                            <ul class="space-y-2 text-gray-600">
+                                <li><span class="font-medium">Scope:</span> Full Brand Identity</li>
+                                <li><span class="font-medium">Deliverables:</span> Logo, Color Palette, Typography, Stationery</li>
+                                <li><span class="font-medium">Year:</span> 2022</li>
+                                <li><span class="font-medium">Client:</span> Lumina Brands</li>
+                            </ul>
+                        </div>
+                        
+                        <div>
+                            <h4 class="font-bold mb-2">Description</h4>
+                            <p class="text-gray-600">
+                                The Lumina rebranding project involved creating a sophisticated visual identity for this luxury skincare company. The logo combines a custom wordmark with an abstract sun motif, representing the brand's focus on natural illumination and radiance. The color palette uses soft golds and warm neutrals to convey premium quality. The complete identity system includes business cards, packaging, and marketing materials.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal 4 -->
+    <div id="modal4" class="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50 hidden">
+        <div class="bg-white rounded-lg max-w-4xl w-full mx-4 max-h-[90vh] overflow-y-auto">
+            <div class="p-6">
+                <div class="flex justify-between items-start mb-6">
+                    <h3 class="text-2xl font-playfair font-bold">Verde E-commerce</h3>
+                    <button onclick="closeModal('modal4')" class="text-gray-500 hover:text-gray-700">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+                
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                    <div>
+                        <img src="https://images.unsplash.com/photo-1547658719-da2b51169166?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1528&q=80" 
+                             alt="E-commerce Website" 
+                             class="w-full rounded-lg">
+                    </div>
+                    
+                    <div>
+                        <div class="mb-6">
+                            <h4 class="font-bold mb-2">Project Details</h4>
+                            <ul class="space-y-2 text-gray-600">
+                                <li><span class="font-medium">Platform:</span> Custom Shopify Theme</li>
+                                <li><span class="font-medium">Features:</span> Product Filtering, AJAX Cart, Custom Checkout</li>
+                                <li><span class="font-medium">Year:</span> 2023</li>
+                                <li><span class="font-medium">Client:</span> Verde Organic</li>
+                            </ul>
+                        </div>
+                        
+                        <div>
+                            <h4 class="font-bold mb-2">Description</h4>
+                            <p class="text-gray-600">
+                                The Verde e-commerce platform was designed to showcase organic home goods with an emphasis on sustainability and craftsmanship. The clean, minimalist interface puts products front and center, with intuitive navigation and seamless checkout flow. Custom UI elements include an interactive product configurator and lifestyle imagery integration. The design system ensures brand consistency across all digital touchpoints.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal 5 -->
+    <div id="modal5" class="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50 hidden">
+        <div class="bg-white rounded-lg max-w-4xl w-full mx-4 max-h-[90vh] overflow-y-auto">
+            <div class="p-6">
+                <div class="flex justify-between items-start mb-6">
+                    <h3 class="text-2xl font-playfair font-bold">Portrait Series</h3>
+                    <button onclick="closeModal('modal5')" class="text-gray-500 hover:text-gray-700">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+                
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                    <div>
+                        <img src="https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1453&q=80" 
+                             alt="Portrait Illustration" 
+                             class="w-full rounded-lg">
+                    </div>
+                    
+                    <div>
+                        <div class="mb-6">
+                            <h4 class="font-bold mb-2">Project Details</h4>
+                            <ul class="space-y-2 text-gray-600">
+                                <li><span class="font-medium">Medium:</span> Digital Painting</li>
+                                <li><span class="font-medium">Software:</span> Photoshop, Procreate</li>
+                                <li><span class="font-medium">Year:</span> 2023</li>
+                                <li><span class="font-medium">Client:</span> Personal Project</li>
+                            </ul>
+                        </div>
+                        
+                        <div>
+                            <h4 class="font-bold mb-2">Description</h4>
+                            <p class="text-gray-600">
+                                This portrait series explores the interplay of light and texture across diverse faces. Each piece was created using custom digital brushes to achieve painterly effects while maintaining photographic realism. The collection was featured in Digital Arts Magazine's "Emerging Artists" showcase. The works demonstrate advanced understanding of facial anatomy, color theory, and emotional expression through portraiture.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal 6 -->
+    <div id="modal6" class="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50 hidden">
+        <div class="bg-white rounded-lg max-w-4xl w-full mx-4 max-h-[90vh] overflow-y-auto">
+            <div class="p-6">
+                <div class="flex justify-between items-start mb-6">
+                    <h3 class="text-2xl font-playfair font-bold">Modern Villa</h3>
+                    <button onclick="closeModal('modal6')" class="text-gray-500 hover:text-gray-700">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+                
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                    <div>
+                        <img src="https://images.unsplash.com/photo-1639762681057-408e52192e55?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1632&q=80" 
+                             alt="Architectural Visualization" 
+                             class="w-full rounded-lg">
+                    </div>
+                    
+                    <div>
+                        <div class="mb-6">
+                            <h4 class="font-bold mb-2">Project Details</h4>
+                            <ul class="space-y-2 text-gray-600">
+                                <li><span class="font-medium">Software:</span> 3ds Max, V-Ray, Photoshop</li>
+                                <li><span class="font-medium">Render Time:</span> 12 hours per image</li>
+                                <li><span class="font-medium">Year:</span> 2023</li>
+                                <li><span class="font-medium">Client:</span> Architectural Firm</li>
+                            </ul>
+                        </div>
+                        
+                        <div>
+                            <h4 class="font-bold mb-2">Description</h4>
+                            <p class="text-gray-600">
+                                This luxury villa visualization was created for a high-end residential development in California. The photorealistic renders showcase the property's clean lines, expansive glass walls, and seamless indoor-outdoor living spaces. Careful attention was paid to material textures, lighting conditions, and landscaping details to accurately represent the architect's vision. The images were used for pre-construction marketing and helped secure several off-plan purchases.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Mobile Menu Toggle
+        const menuToggle = document.getElementById('menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        menuToggle.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open
+                    mobileMenu.classList.add('hidden');
+                }
+            });
+        });
+        
+        // Portfolio Filtering
+        function filterPortfolio(category) {
+            const items = document.querySelectorAll('.portfolio-item');
+            
+            items.forEach(item => {
+                if (category === 'all' || item.getAttribute('data-category') === category) {
+                    item.style.display = 'block';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+            
+            // Update active filter button
+            const buttons = document.querySelectorAll('#portfolio button');
+            buttons.forEach(button => {
+                if (button.textContent.toLowerCase().includes(category) || 
+                    (category === 'all' && button.textContent === 'All')) {
+                    button.classList.add('bg-gold', 'text-white');
+                    button.classList.remove('hover:bg-gray-100');
+                } else {
+                    button.classList.remove('bg-gold', 'text-white');
+                    button.classList.add('hover:bg-gray-100');
+                }
+            });
+        }
+        
+        // Modal Functions
+        function openModal(modalId) {
+            document.getElementById(modalId).classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+        }
+        
+        function closeModal(modalId) {
+            document.getElementById(modalId).classList.add('hidden');
+            document.body.style.overflow = 'auto';
+        }
+        
+        // Close modal when clicking outside content
+        window.addEventListener('click', (e) => {
+            if (e.target.classList.contains('fixed') && e.target.classList.contains('inset-0')) {
+                e.target.classList.add('hidden');
+                document.body.style.overflow = 'auto';
+            }
+        });
+    </script>
+<p style="border-radius: 8px; text-align: center; font-size: 12px; color: #fff; margin-top: 16px;position: fixed; left: 8px; bottom: 8px; z-index: 10; background: rgba(0, 0, 0, 0.8); padding: 4px 8px;">Made with <img src="https://enzostvs-deepsite.hf.space/logo.svg" alt="DeepSite Logo" style="width: 16px; height: 16px; vertical-align: middle;display:inline-block;margin-right:3px;filter:brightness(0) invert(1);"><a href="https://enzostvs-deepsite.hf.space" style="color: #fff;text-decoration: underline;" target="_blank" >DeepSite</a> - 🧬 <a href="https://enzostvs-deepsite.hf.space?remix=Rikka230/usmformation" style="color: #fff;text-decoration: underline;" target="_blank" >Remix</a></p></body>
+</html>
